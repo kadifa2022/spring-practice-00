@@ -50,7 +50,7 @@ Bootstrapping the application
 
 	- @SpringBootConfiguration : Designates this class a configuration class. You can add Java based Spring framework configuration to this class if you need to. This annotation is a specialized form of the @Configuration annotation.
 
-	- @EnableAutoConfiguration :  Enables Spring Boot automatic configiration. It tells Spring Boot to automatically configure any components that it thinks you will need.
+	- @EnableAutoConfiguration :  Enables Spring Boot automatic configuration. It tells Spring Boot to automatically configure any components that it thinks you will need.
 
 	- @ComponentScan : Enables component scanning.
 
