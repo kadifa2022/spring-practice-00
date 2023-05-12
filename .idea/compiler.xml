@@ -10,6 +10,7 @@
         <module name="spring-06-Core-BeanScope" />
         <module name="spring-07-SpringBoot-Demo" />
         <module name="spring-05-Core-Abstraction" />
+        <module name="spring-09-MVC-Model" />
         <module name="spring-08-MVC-Controller" />
       </profile>
     </annotationProcessing>
@@ -18,6 +19,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="spring-07-SpringBoot-Demo" options="-parameters" />
       <module name="spring-08-MVC-Controller" options="-parameters" />
+      <module name="spring-09-MVC-Model" options="-parameters" />
     </option>
   </component>
 </project>
