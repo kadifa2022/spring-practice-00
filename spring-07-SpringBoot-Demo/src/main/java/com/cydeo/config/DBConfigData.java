@@ -5,7 +5,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.List;
-@ConfigurationProperties(prefix = "db")
+@ConfigurationProperties(prefix = "db")//from application properties
 @Data
 @Configuration
 public class DBConfigData {
