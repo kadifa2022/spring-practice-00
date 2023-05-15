@@ -22,4 +22,15 @@ public class Order extends BaseEntity{
     private Customer customer;
     @OneToOne
     private Payment payment;
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "paidPrice=" + paidPrice +
+                ", totalPrice=" + totalPrice +
+                ", cart=" + cart +
+                ", customer=" + customer +
+                ", payment=" + payment +
+                '}';
+    }
 }
