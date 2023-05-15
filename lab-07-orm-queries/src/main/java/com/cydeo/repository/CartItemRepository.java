@@ -26,7 +26,12 @@ public interface CartItemRepository extends JpaRepository<CartItem, Long> {
     List<CartItem> retrieveCartItemsByCartStateAndProductName(@Param("cartState") String  cartState, @Param("name") String name);// if is object enum type String
 
     //Write a native query to get cartItems for specific cart state and without discount
+    @Query(value = "SELECT * FROM cart_item ci JOIN cart c ON ci.card_id= c.id WHERE c.cart_state=?1 and c.discount_id IS NULL", nativeQuery = true)
+    List<CartItem> retrieveCartItemsByCartStateWithoutDiscount(@Param("cartState") String cartState);
 
     //Write a native query to get cartItems for specific cart state and with specific Discount type
+    @Query(value="SELECT * FROM cart_item ci JOIN cart c ON ci.cart_id = c.id JOIN discount d ON c.discount_id = d.id " +
+            "WHERE c.cart_state = ?1 AND d.discountType = ?2" , nativeQuery = true)
+    List<CartItem> retrieveCartItemsByCartSateWithDiscountType(@Param("cartState") String cardState,@Param("discountType") String discountType);
 
 }
