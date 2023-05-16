@@ -1,9 +1,10 @@
 package com.cydeo.service.serviceImp;
 
-import com.cydeo.lab08apipractice.dto.CartDTO;
-import com.cydeo.lab08apipractice.mapper.MapperUtil;
-import com.cydeo.lab08apipractice.repository.CartRepository;
-import com.cydeo.lab08apipractice.service.CartService;
+
+import com.cydeo.dto.CartDTO;
+import com.cydeo.mapper.MapperUtil;
+import com.cydeo.repository.CartRepository;
+import com.cydeo.service.CartService;
 import org.springframework.stereotype.Service;
 
 @Service
