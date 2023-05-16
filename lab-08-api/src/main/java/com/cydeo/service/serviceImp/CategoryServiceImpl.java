@@ -1,6 +1,7 @@
 package com.cydeo.service.serviceImp;
 
-import com.cydeo.lab08apipractice.service.CategoryService;
+
+import com.cydeo.service.CategoryService;
 import org.springframework.stereotype.Service;
 
 @Service
