@@ -1,6 +1,7 @@
 package com.cydeo.service;
 
-import com.cydeo.lab08apipractice.dto.CartDTO;
+import com.cydeo.dto.CartDTO;
+
 
 public interface CartService {
 

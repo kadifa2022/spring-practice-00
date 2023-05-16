@@ -1,8 +1,9 @@
 package com.cydeo.repository;
 
-import com.cydeo.lab08apipractice.entity.Cart;
-import com.cydeo.lab08apipractice.enums.CartState;
-import com.cydeo.lab08apipractice.enums.DiscountType;
+
+import com.cydeo.entity.Cart;
+import com.cydeo.enums.CartState;
+import com.cydeo.enums.DiscountType;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
