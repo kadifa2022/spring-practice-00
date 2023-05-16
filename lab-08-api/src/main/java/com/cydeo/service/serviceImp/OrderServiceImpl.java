@@ -1,17 +1,17 @@
 package com.cydeo.service.serviceImp;
 
-import com.cydeo.lab08apipractice.dto.OrderDTO;
-import com.cydeo.lab08apipractice.entity.Cart;
-import com.cydeo.lab08apipractice.entity.Customer;
-import com.cydeo.lab08apipractice.entity.Order;
-import com.cydeo.lab08apipractice.entity.Payment;
-import com.cydeo.lab08apipractice.enums.PaymentMethod;
-import com.cydeo.lab08apipractice.mapper.MapperUtil;
-import com.cydeo.lab08apipractice.repository.OrderRepository;
-import com.cydeo.lab08apipractice.service.CartService;
-import com.cydeo.lab08apipractice.service.CustomerService;
-import com.cydeo.lab08apipractice.service.OrderService;
-import com.cydeo.lab08apipractice.service.PaymentService;
+import com.cydeo.dto.OrderDTO;
+import com.cydeo.entity.Cart;
+import com.cydeo.entity.Customer;
+import com.cydeo.entity.Order;
+import com.cydeo.entity.Payment;
+import com.cydeo.enums.PaymentMethod;
+import com.cydeo.mapper.MapperUtil;
+import com.cydeo.repository.OrderRepository;
+import com.cydeo.service.CartService;
+import com.cydeo.service.CustomerService;
+import com.cydeo.service.OrderService;
+import com.cydeo.service.PaymentService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

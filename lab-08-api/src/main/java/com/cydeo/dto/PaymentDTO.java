@@ -1,6 +1,7 @@
 package com.cydeo.dto;
 
-import com.cydeo.lab08apipractice.enums.PaymentMethod;
+import com.cydeo.enums.PaymentMethod;
+
 import lombok.Getter;
 import lombok.Setter;
 
