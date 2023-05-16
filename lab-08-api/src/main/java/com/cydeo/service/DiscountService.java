@@ -1,9 +1,9 @@
 package com.cydeo.service;
 
-import com.cydeo.lab08apipractice.dto.DiscountDTO;
+
+import com.cydeo.dto.DiscountDTO;
 
 import java.util.List;
-
 
 public interface DiscountService {
 
