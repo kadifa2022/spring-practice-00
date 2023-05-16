@@ -12,6 +12,7 @@
         <module name="spring-06-Core-BeanScope" />
         <module name="spring-07-SpringBoot-Demo" />
         <module name="spring-05-Core-Abstraction" />
+        <module name="lab-08-api" />
         <module name="spring-09-MVC-Model" />
         <module name="spring-08-MVC-Controller" />
         <module name="lab-06-ORM" />
@@ -22,6 +23,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="lab-06-ORM" options="-parameters" />
       <module name="lab-07-orm-queries" options="-parameters" />
+      <module name="lab-08-api" options="-parameters" />
       <module name="spring-07-SpringBoot-Demo" options="-parameters" />
       <module name="spring-08-MVC-Controller" options="-parameters" />
       <module name="spring-09-MVC-Model" options="-parameters" />
