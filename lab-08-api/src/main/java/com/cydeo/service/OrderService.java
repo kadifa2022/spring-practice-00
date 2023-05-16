@@ -1,7 +1,8 @@
 package com.cydeo.service;
 
-import com.cydeo.lab08apipractice.dto.OrderDTO;
-import com.cydeo.lab08apipractice.enums.PaymentMethod;
+
+import com.cydeo.dto.OrderDTO;
+import com.cydeo.enums.PaymentMethod;
 
 import java.util.List;
 
