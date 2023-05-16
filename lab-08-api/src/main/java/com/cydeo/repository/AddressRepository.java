@@ -1,7 +1,8 @@
 package com.cydeo.repository;
 
-import com.cydeo.lab08apipractice.entity.Address;
-import com.cydeo.lab08apipractice.entity.Customer;
+
+import com.cydeo.entity.Address;
+import com.cydeo.entity.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
