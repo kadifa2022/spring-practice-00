@@ -1,6 +1,7 @@
 package com.cydeo.dto;
 
-import com.cydeo.lab08apipractice.enums.DiscountType;
+import com.cydeo.enums.DiscountType;
+
 import lombok.Getter;
 import lombok.Setter;
 

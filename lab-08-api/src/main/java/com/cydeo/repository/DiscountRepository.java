@@ -1,7 +1,8 @@
 package com.cydeo.repository;
 
-import com.cydeo.lab08apipractice.entity.Discount;
-import com.cydeo.lab08apipractice.enums.DiscountType;
+
+import com.cydeo.entity.Discount;
+import com.cydeo.enums.DiscountType;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

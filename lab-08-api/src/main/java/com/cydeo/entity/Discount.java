@@ -1,12 +1,14 @@
 package com.cydeo.entity;
 
-import com.cydeo.lab08apipractice.enums.DiscountType;
+import com.cydeo.enums.DiscountType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
+
+
 import java.math.BigDecimal;
 
 @Entity
