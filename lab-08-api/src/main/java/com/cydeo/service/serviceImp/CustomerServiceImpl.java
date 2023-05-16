@@ -1,11 +1,12 @@
 package com.cydeo.service.serviceImp;
 
 
-import com.cydeo.lab08apipractice.dto.CustomerDTO;
-import com.cydeo.lab08apipractice.entity.Customer;
-import com.cydeo.lab08apipractice.mapper.MapperUtil;
-import com.cydeo.lab08apipractice.repository.CustomerRepository;
-import com.cydeo.lab08apipractice.service.CustomerService;
+
+import com.cydeo.dto.CustomerDTO;
+import com.cydeo.entity.Customer;
+import com.cydeo.mapper.MapperUtil;
+import com.cydeo.repository.CustomerRepository;
+import com.cydeo.service.CustomerService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
