@@ -1,7 +1,8 @@
 package com.cydeo.service;
 
 
-import com.cydeo.lab08apipractice.dto.PaymentDTO;
+import com.cydeo.dto.PaymentDTO;
+
 
 
 public interface PaymentService {

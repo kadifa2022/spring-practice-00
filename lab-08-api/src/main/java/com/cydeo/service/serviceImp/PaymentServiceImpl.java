@@ -1,9 +1,10 @@
 package com.cydeo.service.serviceImp;
 
-import com.cydeo.lab08apipractice.dto.PaymentDTO;
-import com.cydeo.lab08apipractice.mapper.MapperUtil;
-import com.cydeo.lab08apipractice.repository.PaymentRepository;
-import com.cydeo.lab08apipractice.service.PaymentService;
+
+import com.cydeo.dto.PaymentDTO;
+import com.cydeo.mapper.MapperUtil;
+import com.cydeo.repository.PaymentRepository;
+import com.cydeo.service.PaymentService;
 import org.springframework.stereotype.Service;
 
 @Service
