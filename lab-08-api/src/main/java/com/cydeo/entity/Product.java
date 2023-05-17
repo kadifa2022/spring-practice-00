@@ -22,9 +22,9 @@ public class Product extends BaseEntity{
     private Integer remainingQuantity;
     private String name;
     @ManyToMany
-    @JoinTable(name ="product_category_rel",
-            joinColumns = @JoinColumn(name="p_id"),
-            inverseJoinColumns = @JoinColumn(name ="c_id"))
+    @JoinTable(name = "product_category_rel",
+            joinColumns = @JoinColumn(name= "p_id"),
+            inverseJoinColumns = @JoinColumn(name = "c_id"))
     private List<Category> categoryList;
 
 }
