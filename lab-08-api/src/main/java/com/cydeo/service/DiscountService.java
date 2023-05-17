@@ -6,7 +6,20 @@ import com.cydeo.dto.DiscountDTO;
 import java.util.List;
 
 public interface DiscountService {
+    List<DiscountDTO> readAll();
 
+    Object update(DiscountDTO discountDTO);
+
+    Object create(DiscountDTO discountDTO);
+
+    Object readByName(String name);
+
+
+
+
+
+
+/*
 
     List<DiscountDTO> readAll();
     DiscountDTO update(DiscountDTO discountDTO);
@@ -14,6 +27,8 @@ public interface DiscountService {
     DiscountDTO readByName(String name);
 
 
+
+ */
 
 
 }
