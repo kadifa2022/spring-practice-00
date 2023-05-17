@@ -11,6 +11,12 @@ public interface OrderService {
 
 
     OrderDTO updateOrder(OrderDTO orderDTO);
+
+    OrderDTO createOrder(OrderDTO orderDTO);
+
+    List<OrderDTO> retrieveOrderByPaymentMethod(PaymentMethod paymentMethod);
+
+    List<OrderDTO> retrieveOrderByEmail(String email);
 }
 
     /*
@@ -25,10 +31,7 @@ public interface OrderService {
   List<OrderDTO> retrieveOrderByEmail(String email);
 
 
-//
-//    List<OrderDTO> retrieveOrderByPaymentMethod(PaymentMethod paymentMethod);
-//
-//    List<OrderDTO>retrieveOrderByEmail(String email);
+
 }
 
 
