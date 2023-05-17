@@ -9,6 +9,13 @@ import java.util.List;
 public interface OrderService {
     List<OrderDTO> retrieveListOrder();
 
+
+    OrderDTO updateOrder(OrderDTO orderDTO);
+}
+
+    /*
+    List<OrderDTO> retrieveListOrder();
+
     OrderDTO updateOrder(OrderDTO orderDTO);
 
     OrderDTO createOrder(OrderDTO orderDTO);
@@ -23,3 +30,6 @@ public interface OrderService {
 //
 //    List<OrderDTO>retrieveOrderByEmail(String email);
 }
+
+
+     */
