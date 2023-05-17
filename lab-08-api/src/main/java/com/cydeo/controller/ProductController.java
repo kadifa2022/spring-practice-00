@@ -70,6 +70,12 @@ public class ProductController {
         , productService.retrieveProductByPriceAndQuantity(price, quantity), HttpStatus.OK));
     }
 
+    @GetMapping("/category/{id}")
+    public ResponseEntity<ResponseWrapper> retrieveProductCategoryById(@PathVariable("id") Long categoryId){
+        return ResponseEntity.ok(new ResponseWrapper("Product are successfully retrieved"
+                , productService.retrieveByCategory(categoryId), HttpStatus.OK ));
+    }
+
 
 
 

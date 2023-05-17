@@ -29,23 +29,7 @@ public interface ProductService {
     Integer countProductByPrice(BigDecimal price);
 
     List<ProductDTO> retrieveProductByPriceAndQuantity(BigDecimal price, Integer quantity);
-}
-/*
 
-    List <ProductDTO>retrieveProductByCategoryAndPrice(List<Long> categoryList, BigDecimal price);
-
-    ProductDTO retrieveProductByName(String name);
-
-    List<ProductDTO> retrieveProductByTop3ProductByPrice();
-
-    Integer countProductByPrice(BigDecimal price);
-
-    List<ProductDTO> retrieveProductByPriceAndQuantity(BigDecimal price, Integer quantity);
-
-    List<ProductDTO> retrieveProductByCategoryId(Long categoryId);
-
-
-
+    List<ProductDTO>retrieveByCategory(Long categoryId);
 }
 
- */
