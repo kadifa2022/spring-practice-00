@@ -16,11 +16,37 @@ public class DiscountServiceImp implements DiscountService {
     private final DiscountRepository discountRepository;
     private final MapperUtil mapperUtil;
 
+
     public DiscountServiceImp(DiscountRepository discountRepository, MapperUtil mapperUtil) {
         this.discountRepository = discountRepository;
         this.mapperUtil = mapperUtil;
     }
 
+    @Override
+    public List<DiscountDTO> readAll() {
+        return discountRepository.findAll().stream()
+                .map(discount -> mapperUtil.convert(discount, new DiscountDTO()))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public Object update(DiscountDTO discountDTO) {//saving discontDTO into DB DIRECTLY without the object that i want to update since we have Id inside the DTO We can use this, because automatically will use Id as unique
+        Discount discount = discountRepository.save(mapperUtil.convert(discountDTO, new Discount()));
+        return mapperUtil.convert(discount, new DiscountDTO());
+    }
+
+    @Override
+    public Object create(DiscountDTO discountDTO) {// same as update
+        Discount discount = discountRepository.save(mapperUtil.convert(discountDTO, new Discount()));
+        return mapperUtil.convert(discount, new DiscountDTO());
+    }
+
+    @Override
+    public Object readByName(String name) {
+        return mapperUtil.convert(discountRepository.findFirstByName(name), new DiscountDTO());
+    }
+}
+/*
     @Override
     public List<DiscountDTO> readAll() {
         return discountRepository.findAll().stream()
@@ -47,6 +73,8 @@ public class DiscountServiceImp implements DiscountService {
 
     }
 
+
+ */
 
 
 
