@@ -34,6 +34,27 @@ public class OrderServiceImpl implements OrderService {
         this.cartService = cartService;
     }
 
+
+    @Override
+    public List<OrderDTO> retrieveListOrder() {
+        return orderRepository.findAll().stream()
+                .map(order -> mapperUtil.convert(order, new OrderDTO()))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public OrderDTO updateOrder(OrderDTO orderDTO) {
+        Order order = mapperUtil.convert(orderDTO, new Order());
+        order.setCustomer(mapperUtil.convert(customerService.findById(orderDTO.getCustomerId()), new Customer()));
+        order.setPayment(mapperUtil.convert(paymentService.findById(orderDTO.getPaymentId()), new Payment()));
+        order.setCart(mapperUtil.convert(cartService.findById(orderDTO.getCartId()), new Cart()));
+        order.setPaidPrice(orderDTO.getPaidPrice());
+        order.setTotalPrice(orderDTO.getTotalPrice());
+        Order updatedOrder = orderRepository.save(order);
+        return mapperUtil.convert(updatedOrder, new OrderDTO());
+    }
+}
+/*
     @Override
     public List<OrderDTO> retrieveListOrder() {
         return orderRepository.findAll().stream().map(order->mapperUtil.convert(order, new OrderDTO()))
@@ -80,3 +101,6 @@ public class OrderServiceImpl implements OrderService {
 
 
 }
+
+
+ */
