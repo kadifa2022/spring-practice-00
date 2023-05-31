@@ -15,7 +15,7 @@ public class User extends  BaseEntity{
     private String email;
     private String password;
     private String username;
-    @OneToOne(fetch= FetchType.LAZY)
+    @OneToOne(fetch= FetchType.LAZY)//getting object from db when is needed .LAZY
     @JoinColumn(name = "account_details_id")
     private Account account;
 
