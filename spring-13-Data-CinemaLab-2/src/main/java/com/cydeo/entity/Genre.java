@@ -1,15 +1,18 @@
 package com.cydeo.entity;
 
-import lombok.AllArgsConstructor;
+
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 
+
 @Entity
 @Data
-@AllArgsConstructor
+@NoArgsConstructor
 public class Genre extends BaseEntity{
 
     private String name;
+
 }
