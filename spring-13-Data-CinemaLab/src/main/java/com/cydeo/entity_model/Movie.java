@@ -31,6 +31,6 @@ public class Movie extends BaseEntity{
     @JoinTable(name= "movie_genre_rel",
     joinColumns = @JoinColumn(name= "movie_id"),
     inverseJoinColumns = @JoinColumn(name = "genre_id"))
-    private List<Genre> genreList;// we can use set instead list (behind scene list delete everything and insert again all data that is not deleted, set delete just praticular one )
+    private List<Genre> genreList;// we can use set instead list (behind scene list delete everything and insert again all data that is not deleted, set delete just particular one )
 
 }
