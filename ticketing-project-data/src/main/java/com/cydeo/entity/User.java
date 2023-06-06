@@ -5,12 +5,14 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.Where;
 
 @Getter
 @Setter
 @NoArgsConstructor//because of Jpa
 @Entity
 @Table(name = "users")
+@Where(clause = "is_deleted=false")//spring any repository which is using user entity all query inside the
 public class User extends BaseEntity{
 
 
