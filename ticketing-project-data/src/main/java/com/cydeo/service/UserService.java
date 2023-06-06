@@ -12,7 +12,7 @@ public interface UserService {
     void deleteByUserName(String username);
 
 
+    UserDTO update(UserDTO user);
 
-
-
+    void delete(String username);// created new delete() for isDeleted purpose/ soft delete
 }
