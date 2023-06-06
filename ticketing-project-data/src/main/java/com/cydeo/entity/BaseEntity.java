@@ -17,6 +17,7 @@ public class BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // will let postgres to create primary key
     private Long id;
+    private  Boolean isDeleted = false;
     private LocalDateTime insertDateTime;
     private Long insertUserId;//by whom created
     private LocalDateTime lastUpdateTime;
