@@ -16,6 +16,7 @@ import java.time.LocalDate;
 @Table(name = "projects")
 @Where(clause = "is_deleted=false")
 public class Project extends BaseEntity{
+
     @Column(unique = true)// we can create another project with same projectCode without Validation in UI /DB will throw error
     private String projectCode;
     private String projectName;
