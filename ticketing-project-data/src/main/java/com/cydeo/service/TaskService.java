@@ -11,4 +11,7 @@ public interface TaskService {
     void update(TaskDTO dto);
     void delete(Long id);// we are deleting by id from DB because we don't have anything else unique in
      TaskDTO findById(Long id);
+
+     int totalNonCompletedTask(String projectCode);
+     int totalCompletedTask(String projectCode);
 }
