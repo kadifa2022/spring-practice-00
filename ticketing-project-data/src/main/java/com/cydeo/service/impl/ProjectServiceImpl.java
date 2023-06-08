@@ -77,7 +77,10 @@ public class ProjectServiceImpl implements ProjectService {
     public void delete(String code) {
         Project project = projectRepository.findByProjectCode(code);
         project.setIsDeleted(true);// changing the field to true
+        //after we delete to reuse same project code
+        project.setProjectCode(project.getProjectCode() + "-" + project.getId());//SP00-1
         projectRepository.save(project);
+        taskService.deleteByProject(projectMapper.convertToDto(project));// added new method
 
     }
 
@@ -87,6 +90,7 @@ public class ProjectServiceImpl implements ProjectService {
         Project project = projectRepository.findByProjectCode(projectCode);
         project.setProjectStatus(Status.COMPLETE);// Set the status
         projectRepository.save(project); // save the project
+        taskService.completeByProject(projectMapper.convertToDto(project));
 
 
     }
