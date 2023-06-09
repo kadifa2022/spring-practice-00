@@ -31,4 +31,7 @@ public class RoleServiceImpl implements RoleService {
     public RoleDTO findById(Long id) {
         return roleMapper.convertToDto(roleRepository.findById(id).get());
     }
+
+
+
 }
