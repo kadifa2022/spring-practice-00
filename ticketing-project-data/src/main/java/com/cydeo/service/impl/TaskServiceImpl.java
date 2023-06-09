@@ -57,7 +57,7 @@ public class TaskServiceImpl implements TaskService {
         Optional<Task> task = taskRepository.findById(dto.getId());
         Task convertedTask = taskMapper.convertToEntity(dto);
 
-        if(task.isPresent()){                 // if the status is null get me status from DB : else get me status from USER
+        if(task.isPresent()){  //ternary operation ? :               // if the status is null get me status from DB : else get me status from USER
             convertedTask.setTaskStatus(dto.getTaskStatus() == null ? task.get().getTaskStatus() : dto.getTaskStatus());
             convertedTask.setAssignDate(task.get().getAssignDate());
             taskRepository.save(convertedTask);
