@@ -12,8 +12,8 @@ import org.hibernate.annotations.Where;
 @NoArgsConstructor//because of Jpa
 @Entity
 @Table(name = "users")
-@Where(clause = "is_deleted=false")//spring any repository which is using user entity all query inside the
-public class User extends BaseEntity{
+//@Where(clause = "is_deleted=false")//spring, any repository which is using user entity all query inside the
+public class User extends BaseEntity{//SELECT * FROM users WHERE id = 4 AND is_deleted = false;
 
 
     private String firstName;
