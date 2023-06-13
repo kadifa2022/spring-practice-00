@@ -118,7 +118,7 @@ public class ProjectServiceImpl implements ProjectService {
     @Override
     public List<ProjectDTO> listAllNonCompletedByAssignedManager(UserDTO assignedManager) {
         List<Project> projects = projectRepository
-                .findAllByProjectStatusIsNotAssignedManager(Status.COMPLETE, userMapper.convertToEntity(assignedManager));
+                .findAllByProjectStatusIsNotAndAssignedManager(Status.COMPLETE, userMapper.convertToEntity(assignedManager));
         return projects.stream().map(projectMapper::convertToDto).collect(Collectors.toList());
     }
 
