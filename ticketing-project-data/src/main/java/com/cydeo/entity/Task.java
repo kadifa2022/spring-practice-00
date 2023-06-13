@@ -32,6 +32,6 @@ public class Task extends BaseEntity{
     private Status taskStatus;
 
     @Column(columnDefinition = "DATE")
-    private LocalDate assignDate;
+    private LocalDate assignedDate;
 
 }

@@ -19,7 +19,10 @@ public class User extends BaseEntity{//SELECT * FROM users WHERE id = 4 AND is_d
     private String firstName;
     private String lastName;
 
+    @Column(unique = true)
     private String userName;
+    private String passWord;
+
     private boolean enabled;
     private String phone;
 

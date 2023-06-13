@@ -60,7 +60,7 @@ public class TaskServiceImpl implements TaskService {
 
         if(task.isPresent()){  //ternary operation ? :               // if the status is null get me status from DB : else get me status from USER
             convertedTask.setTaskStatus(dto.getTaskStatus() == null ? task.get().getTaskStatus() : dto.getTaskStatus());
-            convertedTask.setAssignDate(task.get().getAssignDate());
+            convertedTask.setAssignedDate(task.get().getAssignedDate());
             taskRepository.save(convertedTask);
         }
 
