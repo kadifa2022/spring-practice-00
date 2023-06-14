@@ -49,9 +49,20 @@ public class CourseController_ResponseEntity {
                 .body(courseService.createCourse(course));
 
     }
+    @DeleteMapping("{id}")
+     public ResponseEntity<Void> deleteCourseById(@PathVariable("id" ) Long courseId){
+        courseService.deleteCourseById(courseId);
+        return ResponseEntity.noContent().build();//204 noContent status code
+    }
 
 
+    @PutMapping("{id}")
+    public ResponseEntity<Void> updateCourse(@PathVariable("id") Long courseId, @RequestBody CourseDTO course ) {
+        courseService.updateCourse(courseId, course);
+        return ResponseEntity.noContent().build();
 
+
+    }
 
 
 
