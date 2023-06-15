@@ -7,18 +7,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="spring-15-REST" />
         <module name="spring-13-Data-CinemaLab-2" />
         <module name="spring-13-Data-CinemaLab" />
-        <module name="lab-07-orm-queries" />
-        <module name="ticketing-project-data" />
-        <module name="spring-06-Core-BeanScope" />
-        <module name="spring-07-SpringBoot-Demo" />
         <module name="spring-05-Core-Abstraction" />
-        <module name="lab-08-api" />
         <module name="spring-09-MVC-Model" />
         <module name="spring-08-MVC-Controller" />
         <module name="lab-06-ORM" />
+        <module name="spring-15-REST" />
+        <module name="lab-07-orm-queries" />
+        <module name="ticketing-project-data" />
+        <module name="spring-17-REST-Apis" />
+        <module name="spring-06-Core-BeanScope" />
+        <module name="spring-07-SpringBoot-Demo" />
+        <module name="lab-08-api" />
       </profile>
     </annotationProcessing>
   </component>
@@ -33,6 +34,7 @@
       <module name="spring-13-Data-CinemaLab" options="-parameters" />
       <module name="spring-13-Data-CinemaLab-2" options="-parameters" />
       <module name="spring-15-REST" options="-parameters" />
+      <module name="spring-17-REST-Apis" options="-parameters" />
       <module name="ticketing-project-data" options="-parameters" />
     </option>
   </component>
