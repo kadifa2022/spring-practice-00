@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="spring-13-Data-CinemaLab-2" />
         <module name="spring-13-Data-CinemaLab" />
+        <module name="lab-08-ecomerce-rest-api" />
         <module name="spring-05-Core-Abstraction" />
         <module name="spring-09-MVC-Model" />
         <module name="spring-08-MVC-Controller" />
@@ -28,6 +29,7 @@
       <module name="lab-06-ORM" options="-parameters" />
       <module name="lab-07-orm-queries" options="-parameters" />
       <module name="lab-08-api" options="-parameters" />
+      <module name="lab-08-ecomerce-rest-api" options="-parameters" />
       <module name="spring-07-SpringBoot-Demo" options="-parameters" />
       <module name="spring-08-MVC-Controller" options="-parameters" />
       <module name="spring-09-MVC-Model" options="-parameters" />
