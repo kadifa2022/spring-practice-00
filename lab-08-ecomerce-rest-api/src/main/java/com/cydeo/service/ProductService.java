@@ -9,4 +9,5 @@ public interface ProductService  {
     List<ProductDTO> retrieveListProduct();
 
 
+    ProductDTO updateProduct(ProductDTO  productDTO);
 }
