@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+
+
 @RestController
 @RequestMapping("/api/v1/product")
 public class ProductController {
@@ -26,6 +28,11 @@ public class ProductController {
     @PutMapping
     public ResponseEntity<ResponseWrapper> updateProduct(@RequestBody ProductDTO productDTO){
         return ResponseEntity.ok(new ResponseWrapper("Product is updated", productService.updateProduct(productDTO), HttpStatus.OK));
+    }
+
+    @PostMapping
+    public ResponseEntity<ResponseWrapper> createProduct(@RequestBody ProductDTO productDTO){
+        return ResponseEntity.ok(new ResponseWrapper("Product is updated", productService.createProduct(productDTO), HttpStatus.OK));
     }
 
 }
