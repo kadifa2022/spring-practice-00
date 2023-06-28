@@ -54,4 +54,23 @@ public class ProductServiceImpl  implements ProductService{
     public ProductDTO retrieveByName(String name) {
         return mapperUtil.convert(productRepository.findFirstByName(name), new ProductDTO());
     }
+
+    @Override
+    public List<ProductDTO> retrieveProductByTop3ByPrice() {
+        return productRepository.findTop3ByOrderByPriceDesc().stream()
+                .map(product -> mapperUtil.convert(product, new ProductDTO())).collect(Collectors.toList());
+    }
+
+    @Override
+    public Integer countProductByPrice(BigDecimal price) {
+         return productRepository.countProductByPriceGreaterThan(price);
+    }
+
+    @Override
+    public List<ProductDTO> retrieveProductByPriceAndQuantity(BigDecimal price, Integer quantity) {
+        return productRepository.retrieveProductListGreaterThanPriceAndLowerThanRemainingQuantity(price, quantity)
+                .stream().map(product -> mapperUtil.convert(product, new ProductDTO())).collect(Collectors.toList());
+    }
+
+
 }
