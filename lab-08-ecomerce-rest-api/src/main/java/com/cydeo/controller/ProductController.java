@@ -49,5 +49,54 @@ public class ProductController {
                 , productService.retrieveByName(name),HttpStatus.OK));
     }
 
+    @GetMapping("/top3")
+    public ResponseEntity<ResponseWrapper> retrieveProductByTop3ByPrice(){
+        return ResponseEntity.ok(new ResponseWrapper("Product are retrieved"
+        , productService.retrieveProductByTop3ByPrice(), HttpStatus.OK));
+    }
+    @GetMapping("/price/{price}")
+    public ResponseEntity<ResponseWrapper> retrieveProductByPrice(@PathVariable("price") BigDecimal price){
+        return ResponseEntity.ok(new ResponseWrapper("Product are successfully retrieved"
+                , productService.countProductByPrice(price),HttpStatus.OK));
+    }
+    @GetMapping("/price/{price}/quantity/{quantity}")
+    public ResponseEntity<ResponseWrapper> retrieveProductByPriceAndQuantity(@PathVariable("price") BigDecimal price
+            , @PathVariable("quantity") Integer quantity){
+        return ResponseEntity.ok(new ResponseWrapper("Product are successfully retrieved"
+                , productService.retrieveProductByPriceAndQuantity(price, quantity), HttpStatus.OK));
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
