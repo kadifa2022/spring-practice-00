@@ -21,6 +21,7 @@ public class CartServiceImpl implements CartService {
 
     @Override
     public CartDTO findById(Long id) {
-        return mapperUtil.convert(cartRepository.findById(id), new CartDTO());
+        return cartRepository.findById(id).stream()
+                .map(cart -> mapperUtil.convert(cart, new CartDTO())).findFirst().orElseThrow();
     }
 }
