@@ -2,12 +2,12 @@ package com.cydeo.service.impl;
 
 import com.cydeo.dto.ProductDTO;
 
+
 import com.cydeo.entity.Product;
 import com.cydeo.mapper.MapperUtil;
 import com.cydeo.repository.ProductRepository;
 import com.cydeo.service.ProductService;
 import org.springframework.stereotype.Service;
-
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -16,6 +16,7 @@ import java.util.stream.Collectors;
 public class ProductServiceImpl  implements ProductService{
 
     private final ProductRepository productRepository;
+
     private final MapperUtil mapperUtil;
 
     public ProductServiceImpl(ProductRepository productRepository, MapperUtil mapperUtil) {
@@ -70,6 +71,13 @@ public class ProductServiceImpl  implements ProductService{
     public List<ProductDTO> retrieveProductByPriceAndQuantity(BigDecimal price, Integer quantity) {
         return productRepository.retrieveProductListGreaterThanPriceAndLowerThanRemainingQuantity(price, quantity)
                 .stream().map(product -> mapperUtil.convert(product, new ProductDTO())).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<ProductDTO> retrieveByCategory(Long categoryId) {
+        return productRepository.retrieveProductListByCategory(categoryId)
+                .stream()
+                .map(product -> mapperUtil.convert(product, new ProductDTO())).collect(Collectors.toList());
     }
 
 
