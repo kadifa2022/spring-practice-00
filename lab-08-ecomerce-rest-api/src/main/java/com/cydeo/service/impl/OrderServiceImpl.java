@@ -42,11 +42,14 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public OrderDTO updateOrder(OrderDTO orderDTO) {
+    public OrderDTO updateOrder(OrderDTO orderDTO) {// why we are setting all fields one by one?
         Order order = mapperUtil.convert(orderDTO, new Order());   // converting DTO to new Order entity because inside dto we have field with Long, but they are objects from another tables
         order.setCustomer(mapperUtil.convert(customerService.findById(orderDTO.getCustomerId()), new Customer()));
         order.setPayment(mapperUtil.convert(paymentService.findById(orderDTO.getPaymentId()), new Payment()));
         order.setCart(mapperUtil.convert(cartService.findById(orderDTO.getCartId()), new Cart()));
-        return  null;
+
+        Order updatedOrder = orderRepository.save(order);
+
+        return  mapperUtil.convert(updatedOrder, new OrderDTO());
     }
 }
