@@ -17,6 +17,6 @@ public class Order extends BaseEntity{
     private BigDecimal totalPrice;
     @ManyToOne
     private Customer customer;
-    @OneToOne(cascade = CascadeType.ALL)// payment is parent table
+    @OneToOne(cascade = CascadeType.ALL)//we have error we put CascadeType.all -> payment is parent table
     private Payment payment;
 }
