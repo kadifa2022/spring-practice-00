@@ -11,6 +11,7 @@
     <modules>
         <module>spring-05-Core-Abstraction</module>
         <module>spring-06-Core-BeanScope</module>
+        <module>spring-18-REST-SchoolLab</module>
     </modules>
 
     <properties>

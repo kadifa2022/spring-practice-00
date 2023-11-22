@@ -21,6 +21,7 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/lab-08-School-lab/pom.xml" />
         <option value="$PROJECT_DIR$/spring-05-Core-Abstraction1/pom.xml" />
       </set>
     </option>
