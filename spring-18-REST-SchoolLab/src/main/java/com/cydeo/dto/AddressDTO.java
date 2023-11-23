@@ -15,7 +15,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-//@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class AddressDTO {
 
     @JsonIgnore
@@ -28,6 +28,7 @@ public class AddressDTO {
     private String postalCode;
 
     private AddressType addressType;
+
     // THIS FIELD WILL NOT SHOW ON JSON
     @JsonBackReference(value = "student-address-reference")          // defaultReference
     private StudentDTO student;

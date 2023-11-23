@@ -1,5 +1,6 @@
 package com.cydeo.service.impl;
 
+import com.cydeo.client.CountryApiClient;
 import com.cydeo.client.WeatherApiClient;
 import com.cydeo.dto.AddressDTO;
 import com.cydeo.dto.WeatherDTO;
@@ -20,14 +21,17 @@ public class AddressServiceImpl implements AddressService {
     private final AddressRepository addressRepository;
     private final MapperUtil mapperUtil;
     private final WeatherApiClient weatherApiClient;
+    private final CountryApiClient countryApiClient;
 
     @Value("${access_key}") // Access key from application properties (common field)
     private String access_key;
 
-    public AddressServiceImpl(AddressRepository addressRepository, MapperUtil mapperUtil, WeatherApiClient weatherApiClient) {
+    public AddressServiceImpl(AddressRepository addressRepository, MapperUtil mapperUtil, WeatherApiClient weatherApiClient, CountryApiClient countryApiClient) {
         this.addressRepository = addressRepository;
         this.mapperUtil = mapperUtil;
         this.weatherApiClient = weatherApiClient;
+        this.countryApiClient = countryApiClient;
+
     }
 
     @Override
@@ -47,9 +51,15 @@ public class AddressServiceImpl implements AddressService {
         AddressDTO addressDTO = mapperUtil.convert(foundAddress, new AddressDTO());
         // we will get the current temp. and set  based on city, return DTO
         addressDTO.setCurrentTemperature(getCurrentWeather(addressDTO.getCity()).getCurrent().getTemperature());
+        //we will get the flag link based on the country provided then return DTO
+        addressDTO.setFlag(retrieveFlagByCountry(addressDTO.getCountry()));
 
         return addressDTO;
 
+    }
+
+    private String retrieveFlagByCountry(String country) {
+        return countryApiClient.getCountryInfo(country).get(0).getFlags().getPng();
     }
 
     @Override

@@ -10,12 +10,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
-import java.util.List;
 
 
 @RestController
 @RequestMapping("/api/v1/product")
 public class ProductController {
+
+    
 
     private final ProductService productService;
 
@@ -23,9 +24,11 @@ public class ProductController {
         this.productService = productService;
     }
 
+
     @GetMapping
     public ResponseEntity<ResponseWrapper> listProduct(){
-        return ResponseEntity.ok(new ResponseWrapper("Products are successfully retrieved", productService.retrieveListProduct(), HttpStatus.OK));
+        return ResponseEntity.ok(new ResponseWrapper("Products are successfully retrieved",
+                productService.retrieveListProduct(), HttpStatus.OK));
     }
 
     @PutMapping
