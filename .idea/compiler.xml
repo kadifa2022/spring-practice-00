@@ -21,10 +21,12 @@
         <module name="spring-17-REST-Apis" />
         <module name="spring-06-Core-BeanScope" />
         <module name="spring-07-SpringBoot-Demo" />
+        <module name="lab-08-rest" />
         <module name="lab-08-api" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="lab-08-Rest-New" target="18" />
       <module name="lab-08-School-lab" target="18" />
       <module name="spring-18-REST-OpenAPI3" target="17" />
     </bytecodeTargetLevel>
@@ -36,6 +38,7 @@
       <module name="lab-08-School-lab" options="-parameters" />
       <module name="lab-08-api" options="-parameters" />
       <module name="lab-08-ecomerce-rest-api" options="-parameters" />
+      <module name="lab-08-rest" options="-parameters" />
       <module name="spring-07-SpringBoot-Demo" options="-parameters" />
       <module name="spring-08-MVC-Controller" options="-parameters" />
       <module name="spring-09-MVC-Model" options="-parameters" />
