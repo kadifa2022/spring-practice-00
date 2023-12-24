@@ -18,7 +18,7 @@ public class Order extends BaseEntity{
     private BigDecimal totalPrice;
     @OneToOne
     private Cart cart;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)  // many orders can have one customet
     private Customer customer;
     @OneToOne
     private Payment payment;
