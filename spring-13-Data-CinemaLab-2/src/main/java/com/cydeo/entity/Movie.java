@@ -18,13 +18,18 @@ public class Movie extends BaseEntity{
     private String name;
     @Column(columnDefinition = "DATE")
     private LocalDate releaseDate;
+
     private Integer duration;
+
     @Column(columnDefinition = "text")// no limit for text
     private String summary;
+
     @Enumerated(EnumType.STRING)
     private MovieState state;
+
     @Enumerated(EnumType.STRING)
     private MovieType type;
+
     private BigDecimal price;
     //creating 3rd table
     @ManyToMany
