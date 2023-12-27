@@ -15,7 +15,7 @@ import javax.persistence.*;
 @Table(name = "user_account")
 public class User extends  BaseEntity{
 
-    private String userName;
+    private String username;
     private String password;
     private String email;
     @OneToOne(fetch = FetchType.LAZY)
@@ -26,7 +26,7 @@ public class User extends  BaseEntity{
     @Override
     public String toString() {
         return "User{" +
-                "userName='" + userName + '\'' +
+                "userName='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 '}';
