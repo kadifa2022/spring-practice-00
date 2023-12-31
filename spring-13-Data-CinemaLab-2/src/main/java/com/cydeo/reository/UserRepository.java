@@ -16,7 +16,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findByEmail(String name);
 
     //Write a derived query to ead a user with a username?
-    Optional<User> findByUserName(String username);
+    Optional<User> findByUsername(String username);
 
     //Write a derived query to list all users that contain a specific name?
     List<User> findAllByAccountNameContaining(String name);

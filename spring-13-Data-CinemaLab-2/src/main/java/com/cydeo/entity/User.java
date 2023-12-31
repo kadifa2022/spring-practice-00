@@ -19,7 +19,7 @@ public class User extends  BaseEntity{
     private String password;
     private String email;
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "account_detail_id")// changing fk name
+    @JoinColumn(name = "account_details_id")// changing fk name
     private Account account;
 
 
