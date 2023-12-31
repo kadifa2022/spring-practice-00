@@ -51,7 +51,7 @@ public class SchoolController {
     @GetMapping("/parents")
     public ResponseEntity<ResponseWrapper> readAllParents(){
         ResponseWrapper responseWrapper = new ResponseWrapper(true, "Parents are successfully retrieved",
-                HttpStatus.ACCEPTED.value(), parentService.findAll());
+                HttpStatus.ACCEPTED.value(), parentService.findAll());//202 ACCEPTED
         return ResponseEntity.status(HttpStatus.ACCEPTED)
                 .header("Parent", "Returned")
                 .body(responseWrapper);
@@ -60,8 +60,9 @@ public class SchoolController {
 
     @GetMapping("/address/{id}")
     public ResponseEntity<ResponseWrapper> getAddress(@PathVariable("id") Long id) throws Exception {
+        //find the address to return
         AddressDTO addressDTO = addressService.findById(id);
-        return ResponseEntity.ok(new ResponseWrapper("Address is successfully retrieved", addressDTO));
+        return ResponseEntity.ok(new ResponseWrapper("Address "+id+" is successfully retrieved", addressDTO));
     }
 /*
     @PutMapping("/address/{id}")
