@@ -16,13 +16,13 @@ public interface CinemaRepository extends JpaRepository<Cinema, Long> {
     Optional<Cinema> findByName(String name); // to avoid potential NullPointerException if is only one entity  like id, name
 
     //Write a derived query to read sorted the top 3 cinemas that contains a specific sponsored name
-    List<Cinema> findFirst3BySponsorNameContainingOrderBySponsorName (String sponsoredName);
+    List<Cinema> findFirst3BySponsoredNameContainingOrderBySponsoredName (String sponsoredName);
 
     //Write a derived query to list all cinemas in a specific country
     List<Cinema> findCinemaByLocationCountry(String country); // behind the scene is join the table Location
 
     //Write a derived query ti list all cinemas with a specific name or sponsored name
-    List<Cinema> findAllByNameOrSponsorName(String name, String sponsorName);
+    List<Cinema> findAllByNameOrSponsoredName(String name, String sponsorName);
 
     //----------------------JPQL QUERIES------------------------//
     //Write a JPQL query to read the cinema name with a specific id
@@ -39,7 +39,7 @@ public interface CinemaRepository extends JpaRepository<Cinema, Long> {
     //Write a native query to read all cinemas by name or sponsor name contains a specific pattern
     @Query(value = "SELECT * FROM cinema WHERE name ILIKE Lconcat ('%',?1,'%') " +
             "OR sponsor_name ILIKE concat('%',?1,'%')", nativeQuery = true)
-    List<Cinema> retrieveAlLByNameOrSponsorName(@Param("pattern") String pattern);
+    List<Cinema> retrieveAlLByNameOrSponsoredName(@Param("pattern") String pattern);
 
     // Write a native query to sort all cinemas by name
     @Query(value = "SELECT  * FROM cinema ORDER BY name", nativeQuery = true)

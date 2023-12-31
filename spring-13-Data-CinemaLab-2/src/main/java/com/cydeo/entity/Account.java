@@ -18,7 +18,7 @@ public class Account extends BaseEntity{
     private String state;
     private String city;
     private Integer age;
-    private String postCode;
+    private String postalCode;
     @Enumerated(EnumType.STRING)
     private UserRole role;
     @OneToOne(mappedBy = "account")
