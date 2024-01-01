@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 @Setter
 @Table(name = "orders")
 public class Order extends BaseEntity{
-    @OneToOne
+    @ManyToOne
     private Cart cart;
     private BigDecimal paidPrice;
     private BigDecimal totalPrice;
