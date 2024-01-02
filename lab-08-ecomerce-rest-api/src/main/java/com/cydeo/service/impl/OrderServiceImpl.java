@@ -37,12 +37,21 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public List<OrderDTO> retrieveListOrder() {
+    public List<OrderDTO> retrieveListOrder() { //retrieve all orders and return as a list of DTO
         return orderRepository.findAll().stream()
                 .map(order -> mapperUtil.convert(order, new OrderDTO())).collect(Collectors.toList());
     }
 
     @Override
+    public OrderDTO updateOrder(OrderDTO orderDTO) {
+        //Look for orderId inside the DB and throw exception (getting id from OrderDTO) if order exists return order
+        Order order = orderRepository.findById(orderDTO.getId()).orElseThrow(// if we don't find the order throw exception
+                ()->new RuntimeException("Order could not be found"));
+        // then we need to check if the order fields exists or not (important)
+        return null;
+    }
+
+  /*  @Override   // this is done with OZZY, Cundullah
     public OrderDTO updateOrder(OrderDTO orderDTO) {// why we are setting all fields one by one? From DTO we have more than one objects/ in DTO we are representing with Long variable name / but those names are holding  data with own id
         Order order = mapperUtil.convert(orderDTO, new Order());   // converting DTO to new Order entity because inside dto we have field with Long, but they are objects from another tables with id
         order.setCustomer(mapperUtil.convert(customerService.findById(orderDTO.getCustomerId()), new Customer()));
@@ -55,6 +64,11 @@ public class OrderServiceImpl implements OrderService {
 
         return mapperUtil.convert(updatedOrder, new OrderDTO());
     }
+
+
+   */
+
+
 
     @Override
     public OrderDTO createOrder(OrderDTO orderDTO) {

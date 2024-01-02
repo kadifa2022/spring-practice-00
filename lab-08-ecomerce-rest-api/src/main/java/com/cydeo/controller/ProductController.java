@@ -48,7 +48,7 @@ public class ProductController {
     }
     @GetMapping("/{name}")
     public ResponseEntity<ResponseWrapper> retrieveProductByName(@PathVariable("name") String name){
-        return ResponseEntity.ok(new ResponseWrapper("Product are successfully retrieved"
+        return ResponseEntity.ok(new ResponseWrapper("Product is successfully retrieved"
                 , productService.retrieveByName(name),HttpStatus.OK));
     }
 
@@ -57,7 +57,7 @@ public class ProductController {
         return ResponseEntity.ok(new ResponseWrapper("Product are retrieved"
         , productService.retrieveProductByTop3ByPrice(), HttpStatus.OK));
     }
-    @GetMapping("/price/{price}")
+    @GetMapping("/price/{price}")    // count product by price
     public ResponseEntity<ResponseWrapper> retrieveProductByPrice(@PathVariable("price") BigDecimal price){
         return ResponseEntity.ok(new ResponseWrapper("Product are successfully retrieved"
                 , productService.countProductByPrice(price),HttpStatus.OK));
