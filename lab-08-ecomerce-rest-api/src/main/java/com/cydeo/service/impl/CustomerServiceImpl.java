@@ -25,4 +25,9 @@ public class CustomerServiceImpl implements CustomerService {
                 .stream()
                 .map(customer -> mapperUtil.convert(customer, new CustomerDTO())).findFirst().orElseThrow();
     }
+
+    @Override
+    public boolean existById(Long customerId) { //with this method we don't need to bring object
+        return customerRepository.existsById(customerId);
+    }
 }
