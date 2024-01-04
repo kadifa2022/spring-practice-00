@@ -24,4 +24,9 @@ public class CartServiceImpl implements CartService {
         return cartRepository.findById(id).stream()
                 .map(cart -> mapperUtil.convert(cart, new CartDTO())).findFirst().orElseThrow();
     }
+
+    @Override
+    public boolean existById(Long id) {
+        return cartRepository.existsById(id);
+    }
 }
