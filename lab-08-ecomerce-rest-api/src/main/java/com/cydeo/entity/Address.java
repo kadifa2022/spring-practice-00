@@ -1,7 +1,6 @@
 package com.cydeo.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToOne;
+import javax.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 

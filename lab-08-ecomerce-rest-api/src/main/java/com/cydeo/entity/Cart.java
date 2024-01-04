@@ -2,13 +2,11 @@ package com.cydeo.entity;
 
 
 import com.cydeo.enums.CartState;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.ManyToOne;
+import javax.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.persistence.Entity;
 
 
 @Entity
