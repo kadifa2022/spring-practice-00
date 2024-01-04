@@ -7,4 +7,6 @@ public interface PaymentService {
 
 
     PaymentDTO findById(Long id);
+
+    boolean existById(Long id);
 }

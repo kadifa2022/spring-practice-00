@@ -1,9 +1,11 @@
 package com.cydeo.controller;
 
 import com.cydeo.dto.OrderDTO;
+import com.cydeo.dto.UpdateOrderDTO;
 import com.cydeo.enums.PaymentMethod;
 import com.cydeo.model.ResponseWrapper;
 import com.cydeo.service.OrderService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -29,6 +31,12 @@ public class OrderController {
     @PutMapping
     ResponseEntity<ResponseWrapper> updateOrder(@RequestBody OrderDTO orderDTO){
         return ResponseEntity.ok(new ResponseWrapper("Order is updated" , orderService.updateOrder(orderDTO),HttpStatus.OK));
+    }
+
+    @PutMapping("/{id}")
+    ResponseEntity<ResponseWrapper> updateOrderById(@PathVariable("id") Long id, @Valid @RequestBody  UpdateOrderDTO updateOrderDTO){
+        return ResponseEntity.ok(new ResponseWrapper("Order is successfully updated",
+                orderService.updateOrderById(id, updateOrderDTO),HttpStatus.OK));
     }
 
     @PostMapping
