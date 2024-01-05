@@ -31,7 +31,7 @@ public class OrderController {
     }
 
     @PutMapping
-    ResponseEntity<ResponseWrapper> updateOrder(@RequestBody OrderDTO orderDTO){
+    ResponseEntity<ResponseWrapper> updateOrder(@Valid @RequestBody OrderDTO orderDTO){
         return ResponseEntity.ok(new ResponseWrapper("Order is updated" , orderService.updateOrder(orderDTO),HttpStatus.OK));
     }
 
