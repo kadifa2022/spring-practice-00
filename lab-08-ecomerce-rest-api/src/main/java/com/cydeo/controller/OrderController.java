@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/order")
@@ -32,7 +33,8 @@ public class OrderController {
 
     @PutMapping
     ResponseEntity<ResponseWrapper> updateOrder(@Valid @RequestBody OrderDTO orderDTO){
-        return ResponseEntity.ok(new ResponseWrapper("Order is updated" , orderService.updateOrder(orderDTO),HttpStatus.OK));
+        return ResponseEntity.ok(new ResponseWrapper("Order is updated"
+                , orderService.updateOrder(orderDTO),HttpStatus.OK));
     }
 
     @PutMapping("/{id}")
@@ -47,6 +49,12 @@ public class OrderController {
         return ResponseEntity.ok(new ResponseWrapper("Order is created"
                 , orderService.createOrder(orderDTO), HttpStatus.OK));
     }
+    @GetMapping("/{id}")                                                        //passing Optional to avoid nullPointerAcceptation
+    public ResponseEntity<ResponseWrapper> getOrderById(@PathVariable("id") Long id,@RequestParam(required = false) Optional<String> currency){
+        return ResponseEntity.ok(new ResponseWrapper("Order is successfully retrieved.",
+                orderService.retrieveOrderDetailById(id, currency), HttpStatus.OK));
+    }
+
 
     @GetMapping("/paymentMethod/{paymentMethod}")
     ResponseEntity<ResponseWrapper> retrieveOrderByPaymentMethod(@PathVariable("paymentMethod") PaymentMethod paymentMethod){
