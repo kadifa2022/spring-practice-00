@@ -22,5 +22,5 @@ public class CurrencyApiResponse {
    // @JsonProperty("time stamp") just the sample if we put space between that we have annotation to matched
     private Long timestamp;
     private String source;
-    private Map<String,Double> quotes;
+    private Map<String, Double> quotes;
 }
