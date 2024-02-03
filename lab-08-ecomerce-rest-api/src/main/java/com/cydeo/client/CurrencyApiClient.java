@@ -25,7 +25,7 @@ public interface CurrencyApiClient {
 
     // we will use this api inside OrderServiceImpl.
     @GetMapping("/live") //live is endpoints
-    Map<String, Object> getCurrencyRates(@RequestParam("access_key") String accessKey,
+    Map <String, Object> getCurrencyRates(@RequestParam("access_key") String accessKey,
                                          @RequestParam("currencies") String currencies,
                                          @RequestParam("source") String source,
                                          @RequestParam("format") int format);
