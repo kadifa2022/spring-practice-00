@@ -7,7 +7,9 @@ import com.cydeo.entity.Cart;
 import com.cydeo.entity.Customer;
 import com.cydeo.entity.Order;
 import com.cydeo.entity.Payment;
+import com.cydeo.enums.Currency;
 import com.cydeo.enums.PaymentMethod;
+import com.cydeo.exception.CurrencyTypeNotFoundException;
 import com.cydeo.exception.NotFoundException;
 import com.cydeo.mapper.MapperUtil;
 import com.cydeo.repository.OrderRepository;
@@ -24,6 +26,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -164,7 +167,7 @@ public class OrderServiceImpl implements OrderService {
                 () -> new NotFoundException("Order could not be found."));// if we couldn't find id throw exception
        // if we are getting currency value from the user if not find order and returned it
         currency.ifPresent(curr -> {  // business logic of consuming// we are not saving this in DB
-            validateCurrency(curr);// if is invalid currency i will throw our costume exception
+            validateCurrency(curr);//validate before sending api because of cost/performance //if is invalid currency i will throw our costume exception
             //get the currency date based on currency type -> api consume
             // steps we will have private method which is accepting the currency and returning the currency result
            BigDecimal currencyRate = getCurrencyRate(curr); // this method will return double and accept currency
@@ -181,6 +184,17 @@ public class OrderServiceImpl implements OrderService {
     }
 
     private void validateCurrency(String curr) {
+        //check if the currency is valid currency
+        List<String> currencies = Stream.of(Currency.values())
+                .map(currency -> currency.value)
+                .collect(Collectors.toList());
+       boolean isCurrencyValid  =  currencies.contains(curr);
+       if(!isCurrencyValid){
+           throw new CurrencyTypeNotFoundException("Currency type for " + curr + " could not be found");
+
+
+       }
+
     }
 
 
@@ -188,15 +202,15 @@ public class OrderServiceImpl implements OrderService {
         //will do all consuming related, separate where we are going to send request
         // in this method i will communicate with api and get the response
         // What we will do in this method? 1. Consume API
-        Map<String, Double> quotes =(Map<String, Double>) currencyApiClient.getCurrencyRates(accessKey,currency,
-                "USD",1).get("quotes"); // returning map-> we save response inside map
+                                    // cast because we have Object inside client
+        Map<String, Double> quotes = (Map<String, Double>) currencyApiClient.getCurrencyRates(accessKey, currency, "USD",1).get("quotes"); // returning map-> we save response inside map
         // after request what we can do? check if success is true, then retrieve value (feignClient fold back)
 
         Boolean isSuccess = (Boolean) currencyApiClient.getCurrencyRates(accessKey,currency,"USD",1).get("success");
         if(!isSuccess){
             throw new RuntimeException("API IS DOWN");
         }
-        String expectedCurrency = "USD" + currency.toLowerCase();// "USDEUR"api  USD + whatever we're expecting
+        String expectedCurrency = "USD" + currency.toUpperCase();// "USDEUR"api  USD + whatever we're expecting
         BigDecimal currencyRate = BigDecimal.valueOf(quotes.get(expectedCurrency));
 
         //Before currencyRate check if currency rate is valid (feignClient fold Back)
