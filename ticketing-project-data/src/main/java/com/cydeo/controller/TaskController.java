@@ -92,15 +92,16 @@ public class TaskController {
 
         return "/task/status-update";
     }
-    @PostMapping("/employee/update/{id}")
-    public String employeeUpdateTask(@ModelAttribute("task")TaskDTO task, BindingResult bindingResult, Model model){
 
-        if(bindingResult.hasErrors()){
+    @PostMapping("/employee/update/{id}")
+    public String employeeUpdateTask(@ModelAttribute("task") TaskDTO task, BindingResult bindingResult, Model model) {
+
+        if (bindingResult.hasErrors()) {
 
             model.addAttribute("statuses", Status.values());
             model.addAttribute("tasks", taskService.listAllTasksByStatusIsNot(Status.COMPLETE));
 
-            return"/task/status-update";
+            return "/task/status-update";
 
         }
         taskService.update(task);

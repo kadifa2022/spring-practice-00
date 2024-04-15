@@ -23,9 +23,11 @@
         <module name="spring-07-SpringBoot-Demo" />
         <module name="lab-08-rest" />
         <module name="lab-08-api" />
+        <module name="lab-06-ORM-ecommerce" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="lab-06-ORM-ecommerce" target="17" />
       <module name="lab-08-Rest-New" target="18" />
       <module name="lab-08-School-lab" target="18" />
       <module name="spring-18-REST-OpenAPI3" target="17" />
@@ -34,6 +36,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="lab-06-ORM" options="-parameters" />
+      <module name="lab-06-ORM-ecommerce" options="-parameters" />
       <module name="lab-07-orm-queries" options="-parameters" />
       <module name="lab-08-School-lab" options="-parameters" />
       <module name="lab-08-api" options="-parameters" />
