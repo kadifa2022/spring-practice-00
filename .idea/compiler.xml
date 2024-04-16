@@ -27,7 +27,6 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="lab-06-ORM-ecommerce" target="17" />
       <module name="lab-08-Rest-New" target="18" />
       <module name="lab-08-School-lab" target="18" />
       <module name="spring-18-REST-OpenAPI3" target="17" />
