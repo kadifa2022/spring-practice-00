@@ -13,8 +13,7 @@
         <module>spring-06-Core-BeanScope</module>
         <module>spring-18-REST-SchoolLab</module>
         <module>lab-08-rest</module>
-        <module>lab-06-ORM-ecomerce</module>
-
+<!--        <module>lab-06-ORM-ecommerce</module>-->
     </modules>
 
 
